@@ -25,7 +25,7 @@ const TableBody = (props) =>{
     return(
         <tr key={index}>
         <td>{row.title}</td>
-        <td>{row.actors}</td>
+        <td>{row.actors.join(", ")}</td>
         <td>{row.plot}</td>
         <td>{row.imdbRating}</td>
         <td>{row.director}</td>

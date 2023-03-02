@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import "./App.css";
 import MovieForm from './MovieForm';
 import Table from './Table'
+import SearchBox from './MovieSearch';
 
 //Welcome Component
 function Welcome() {
@@ -136,11 +137,18 @@ class App extends Component {
     })
   }
 
+  onSearchChange = event => {
+    this.setState({searchfield: event.target.value})
+  }
+
+
     //ALWAYS render function in component
     render(){
+
       return (
       <div className="container">
       <Welcome/>
+      <SearchBox onSearchChange={this.onSearchChange}/>
         <Table
           movies={this.state.movies}
           removeMovie={this.removeMovie}
